@@ -8,8 +8,8 @@ public class Principal01 {
 	// Activamos el Scanner
 	static Scanner sc = new Scanner(System.in);
 
-	// Función eligeNumero() - DE CREACIÓN PROPIA
-	public static int eligeNumero() {
+	// Función pideNumero() - DE CREACIÓN PROPIA
+	public static int pideNumero() {
 		// Variable del numero que pediremos al usuario
 		int numero = -1;
 
@@ -43,8 +43,8 @@ public class Principal01 {
 		boolean numeroElegidoEsPrimo;
 		boolean numeroElegidoEsCapicua;
 
-		// Asignamos al número elegido el valor devuelto por la función eligeNumero()
-		numeroElegido = Principal01.eligeNumero();
+		// Asignamos al número elegido el valor devuelto por la función pideNumero()
+		numeroElegido = Principal01.pideNumero();
 
 		// Creamos un objeto de tipo Numeros01 con el valor solicitado al usuario como
 		// parámetro
