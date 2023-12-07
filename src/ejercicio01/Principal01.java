@@ -43,7 +43,7 @@ public class Principal01 {
 		boolean numeroElegidoEsPrimo;
 		boolean numeroElegidoEsCapicua;
 
-		// Asignamos al número elegido el valor devuelto por la función menu()
+		// Asignamos al número elegido el valor devuelto por la función eligeNumero()
 		numeroElegido = Principal01.eligeNumero();
 
 		// Creamos un objeto de tipo Numeros01 con el valor solicitado al usuario como
