@@ -5,7 +5,7 @@ public class FuncionesRecursivas04 {
 	// Función sumatorio(int numero)
 	public static int sumatorio(int numero) {
 		// Variable resultado
-		int resultado = 0;
+		int resultado;
 
 		// Caso base, no vuelve a llamar a la función recursiva
 		if (numero == 1)
