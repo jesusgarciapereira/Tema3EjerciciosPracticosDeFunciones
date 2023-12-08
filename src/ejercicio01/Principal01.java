@@ -3,6 +3,15 @@ package ejercicio01;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//ENTRADA: Introduzco 7 | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 76.5 | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 0 | RESULTADO ESPERADO: Introduzca un número entero (a partir del 1)
+//ENTRADA: 7 | RESULTADO ESPERADO: 7 es primo y es capicúa
+//ENTRADA: 13 | RESULTADO ESPERADO: 13 es primo y no es capicúa
+//ENTRADA: 121 | RESULTADO ESPERADO: 121 no es primo y es capicúa
+//ENTRADA: 131 | RESULTADO ESPERADO: 131 es primo y es capicúa
+//ENTRADA: 567 | RESULTADO ESPERADO: 567 no es primo y no es capicúa
+
 public class Principal01 {
 
 	// Activamos el Scanner
@@ -16,8 +25,8 @@ public class Principal01 {
 		// Este bloque de instrucciones se ejecutará, al menos, una vez
 		do {
 			try {
-				// Pedimos al usuario un número entero positivo
-				System.out.println("Introduzca un número entero positivo");
+				// Pedimos al usuario un número entero
+				System.out.println("Introduzca un número entero (a partir del 1)");
 				// Lo leemos y se lo asignamos a la variable
 				numero = sc.nextInt();
 				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
@@ -27,9 +36,9 @@ public class Principal01 {
 			} finally {
 				sc.nextLine();
 			}
-			// Si el valor de la variable es negativo, repetiremos el bloque de
+			// Si el valor de la variable es menor que 1, repetiremos el bloque de
 			// instrucciones del do
-		} while (numero < 0);
+		} while (numero < 1);
 
 		// La función devolverá el valor asignado a numero
 		return numero;

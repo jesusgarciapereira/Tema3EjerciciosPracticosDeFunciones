@@ -4,6 +4,19 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
+//ENTRADA: radio esfera | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: -4 | RESULTADO ESPERADO: Introduzca el radio de la esfera (en centímetros)
+//ENTRADA: 0 | RESULTADO ESPERADO: Introduzca el radio de la esfera (en centímetros)
+//ENTRADA: 3 | RESULTADO ESPERADO:  Una esfera de radio 3 centímetros
+//									Tiene una superficie de 113.1 cm2
+//									Tiene una volumen de 113.1 cm3
+//ENTRADA: 10 | RESULTADO ESPERADO: Una esfera de radio 10 centímetros
+//									Tiene una superficie de 1256.6 cm2
+//									Tiene una volumen de 4188.8 cm3
+//ENTRADA: 4.5 | RESULTADO ESPERADO: Una esfera de radio 4.5 centímetros
+//									 Tiene una superficie de 254.5 cm2
+//									 Tiene una volumen de 381.7 cm3
+
 public class Principal02 {
 
 	// Activamos el Scanner
@@ -28,9 +41,9 @@ public class Principal02 {
 			} finally {
 				sc.nextLine();
 			}
-			// Si el valor de la variable es negativo, repetiremos el bloque de
+			// Si el valor de la variable es menor o igual que 0, repetiremos el bloque de
 			// instrucciones del do
-		} while (radio < 0);
+		} while (radio <= 0);
 
 		// La función devolverá el valor asignado a numero
 		return radio;
@@ -64,7 +77,7 @@ public class Principal02 {
 		System.out.println("Una esfera de radio " + radioIntroducido + " centímetros");
 		System.out.println("Tiene una superficie de " + superficie + " cm2");
 		System.out.println("Tiene una volumen de " + volumen + " cm3");
-		
+
 		// Cerramos el Scanner
 		sc.close();
 	}

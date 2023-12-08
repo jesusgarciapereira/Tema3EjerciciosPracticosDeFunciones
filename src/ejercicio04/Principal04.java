@@ -4,6 +4,26 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
+//1. Sumatorio
+//2. Potencia
+//3. Serie de Fibonacci
+//0. Salir
+//
+//Seleccione una opción
+//
+//ENTRADA: Quiero la Serie de Fibonacci | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 1.5 | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: -1 | RESULTADO ESPERADO: Seleccione una opción
+//ENTRADA: 4 | RESULTADO ESPERADO: Seleccione una opción
+//ENTRADA: 1 dos | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 1 0 | RESULTADO ESPERADO: Seleccione un valor para n (mayor que 0)
+//ENTRADA: 1 4 | RESULTADO ESPERADO: 10
+//ENTRADA: 2 0 1 | RESULTADO ESPERADO: 0
+//ENTRADA: 2 -2.1 2  | RESULTADO ESPERADO: 4.41
+//ENTRADA: 3 0 | RESULTADO ESPERADO: Seleccione una posición de la serie de Fibonacci (a partir del 1)
+//ENTRADA: 3 6 | RESULTADO ESPERADO: 8
+//ENTRADA: 0 | RESULTADO ESPERADO: Saliendo del programa
+
 public class Principal04 {
 
 	// Activamos el Scanner
@@ -57,10 +77,37 @@ public class Principal04 {
 		return opcion;
 	}
 
-	// Función pideNumeroInt() - DE CREACIÓN PROPIA
-	public static int pideNumeroInt() {
-		// Variable del número entero que pediremos al usuario
-		int numeroInt = -1;
+	// Función pideNumero() - DE CREACIÓN PROPIA
+		public static int pideNumero() {
+			// Variable del número que pediremos al usuario
+			int numero = 0;
+
+			// Este bloque de instrucciones se ejecutará, al menos, una vez
+			do {
+				try {
+					// Pedimos al usuario un valor para n
+					System.out.println("Seleccione un valor para n (mayor que 0)");
+					// Lo leemos y se lo asignamos a la variable numero
+					numero = sc.nextInt();
+					// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
+				} catch (InputMismatchException e) {
+					System.out.println("El dato introducido no es del tipo correcto");
+					// Siempre limpiaremos el buffer
+				} finally {
+					sc.nextLine();
+				}
+				// Si el valor de la variable es menor o igual que 0, repetiremos el bloque de instrucciones del do
+			} while (numero <= 0);
+
+			// La función devolverá el valor asignado a numero
+			return numero;
+
+		}
+	
+	// Función pideBase() - DE CREACIÓN PROPIA
+	public static double pideBase() {
+		// Variable de la base que pediremos al usuario
+		double base = -1;
 
 		// Variable booleana para determinar si el dato es del tipo correcto
 		boolean numeroCorrecto = false;
@@ -68,10 +115,10 @@ public class Principal04 {
 		// Este bloque de instrucciones se ejecutará, al menos, una vez
 		do {
 			try {
-				// Pedimos al usuario un número real
-				System.out.println("Seleccione un número");
-				// Lo leemos y se lo asignamos a la variable numero
-				numeroInt = sc.nextInt();
+				// Pedimos al usuario un valor para la base
+				System.out.println("Seleccione un valor para la base");
+				// Lo leemos y se lo asignamos a la variable base
+				base = sc.nextDouble();
 				// Si es del tipo correcto, le asignamos true a numeroCorrecto
 				numeroCorrecto = true;
 				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
@@ -85,53 +132,82 @@ public class Principal04 {
 			// de instrucciones del do
 		} while (!numeroCorrecto);
 
-		// La función devolverá el valor asignado a numeroInt
-		return numeroInt;
+		// La función devolverá el valor asignado a la base
+		return base;
 
 	}
+	
+	// Función pideExponente() - DE CREACIÓN PROPIA
+		public static int pideExponente() {
+			// Variable del exponente que pediremos al usuario
+			int exponente = -1;
 
-	// Función pideNumeroDouble() - DE CREACIÓN PROPIA
-	public static int pideNumeroDouble() {
-		// Variable del número entero que pediremos al usuario
-		int numeroDouble = -1;
+			// Variable booleana para determinar si el dato es del tipo correcto
+			boolean numeroCorrecto = false;
 
-		// Variable booleana para determinar si el dato es del tipo correcto
-		boolean numeroCorrecto = false;
+			// Este bloque de instrucciones se ejecutará, al menos, una vez
+			do {
+				try {
+					// Pedimos al usuario un valor para el exponente
+					System.out.println("Seleccione un valor para el exponente");
+					// Lo leemos y se lo asignamos a la variable exponente
+					exponente = sc.nextInt();
+					// Si es del tipo correcto, le asignamos true a numeroCorrecto
+					numeroCorrecto = true;
+					// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
+				} catch (InputMismatchException e) {
+					System.out.println("El dato introducido no es del tipo correcto");
+					// Siempre limpiaremos el buffer
+				} finally {
+					sc.nextLine();
+				}
+				// Si el valor de la variable no es del tipo correcto, repetiremos el bloque
+				// de instrucciones del do
+			} while (!numeroCorrecto);
 
-		// Este bloque de instrucciones se ejecutará, al menos, una vez
-		do {
-			try {
-				// Pedimos al usuario un número real
-				System.out.println("Seleccione un número");
-				// Lo leemos y se lo asignamos a la variable numero
-				numeroDouble = sc.nextInt();
-				// Si es del tipo correcto, le asignamos true a numeroCorrecto
-				numeroCorrecto = true;
-				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
-			} catch (InputMismatchException e) {
-				System.out.println("El dato introducido no es del tipo correcto");
-				// Siempre limpiaremos el buffer
-			} finally {
-				sc.nextLine();
-			}
-			// Si el valor de la variable no es del tipo correcto, repetiremos el bloque
-			// de instrucciones del do
-		} while (!numeroCorrecto);
+			// La función devolverá el valor asignado al exponente
+			return exponente;
 
-		// La función devolverá el valor asignado a numeroInt
-		return numeroDouble;
+		}
 
-	}
+		// Función pidePosicion() - DE CREACIÓN PROPIA
+				public static int pidePosicion() {
+					// Variable del número que pediremos al usuario
+					int posicion = 0;
+
+					// Este bloque de instrucciones se ejecutará, al menos, una vez
+					do {
+						try {
+							// Pedimos al usuario un valor para la posición
+							System.out.println("Seleccione una posición de la serie de Fibonacci (a partir del 1)");
+							// Lo leemos y se lo asignamos a la variable posicion
+							posicion = sc.nextInt();
+							// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
+						} catch (InputMismatchException e) {
+							System.out.println("El dato introducido no es del tipo correcto");
+							// Siempre limpiaremos el buffer
+						} finally {
+							sc.nextLine();
+						}
+						// Si el valor de la variable es menor o igual que 0, repetiremos el bloque de instrucciones del do
+					} while (posicion <= 0);
+
+					// La función devolverá el valor asignado a posicion
+					return posicion;
+
+				}
 
 	// Función main()
 	public static void main(String[] args) {
 		// Variable de la opción elegida por el usuario
 		int opcion;
 		// Variables de los números que le pediremos al usuario
-		int numInt;
-		double numDouble;
+		int numero;
+		double base;
+		int exponente;
+		int posicion;
 		// Variable del resultado que mostraremos
-		double resultado = 0;
+		double resultado;
 
 		// Configuración para permitir en la consola números decimales con punto
 		sc.useLocale(Locale.US);
@@ -147,45 +223,44 @@ public class Principal04 {
 			resultado = switch (opcion) {
 			case 1 -> {
 				// Mostramos la opción elegida
-				System.out.println("Sumatorio:");
+				System.out.println("Sumatorio (entre 1 y n):");
 				
-				// Asignamos al número entero el valor devuelto por la función pideNumeroInt()
-				numInt = Principal04.pideNumeroInt();
+				// Asignamos al número entero el valor devuelto por la función pideNumero()
+				numero = Principal04.pideNumero();
 				
-				// Asignamos al resultado el valor devuelto por la función sumatorio(numInt)
+				// Asignamos al resultado el valor devuelto por la función sumatorio(numero)
 				System.out.println("Resultado");
-				yield FuncionesRecursivas04.sumatorio(numInt);
+				yield FuncionesRecursivas04.sumatorio(numero);
 			}
 
 			case 2 -> {
 				// Mostramos la opción elegida
 				System.out.println("Potencia:");
 				
-				// Asignamos a la base el valor devuelto por la función pideNumeroDouble()
-				System.out.println("Base:");
-				numDouble = Principal04.pideNumeroDouble();
+				// Asignamos a la base el valor devuelto por la función pideBase()
+				base = Principal04.pideBase();
 				
-				// Asignamos al exponente el valor devuelto por la función pideNumeroInt()
+				// Asignamos al exponente el valor devuelto por la función pideExponente()
 				System.out.println("Expponente:");
-				numInt = Principal04.pideNumeroInt();
+				exponente = Principal04.pideExponente();
 				
-				// Asignamos al resultado el valor devuelto por la función potencia(numDouble, numInt)
+				// Asignamos al resultado el valor devuelto por la función potencia(base, exponente)
 				System.out.println("Resultado");
-				yield FuncionesRecursivas04.potencia(numDouble, numInt);
+				yield FuncionesRecursivas04.potencia(base, exponente);
 			}
 			case 3 -> {
 				// Mostramos la opción elegida
 				System.out.println("Fibonacci:");
 				
-				// Asignamos al número entero el valor devuelto por la función pideNumeroInt()
-				numInt = Principal04.pideNumeroInt();
+				// Asignamos a la posición el valor devuelto por la función pidePosicion()
+				posicion = Principal04.pidePosicion();
 				
-				// Asignamos al resultado el valor devuelto por la función serieFibonacci(numInt)
+				// Asignamos al resultado el valor devuelto por la función serieFibonacci(posicion)
 				System.out.println("Resultado");
-				yield FuncionesRecursivas04.serieFibonacci(numInt);
+				yield FuncionesRecursivas04.serieFibonacci(posicion);
 			}
 			
-			// Caso default obligatorio
+			// Caso default obligatorio con un valor que nunca se mostrará
 			default -> Math.sqrt(-1);
 			};
 

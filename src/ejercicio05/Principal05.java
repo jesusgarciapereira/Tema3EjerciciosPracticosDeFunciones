@@ -4,6 +4,43 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
+//1. Triángulo
+//2. Cuadrado
+//3. Hexágono
+//0. Salir
+//
+//Seleccione una opción
+//
+//ENTRADA: Dibujemos | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 3.7 | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: -1 | RESULTADO ESPERADO: Seleccione una opción
+//ENTRADA: 4 | RESULTADO ESPERADO: Seleccione una opción
+//ENTRADA: 1 triángulo | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 1 0 | RESULTADO ESPERADO: Introduzca el lado de la figura
+//ENTRADA: 1 4 T | RESULTADO ESPERADO:    T 
+//										 T T 
+//										T T T 
+//									   T T T T 
+//ENTRADA: 2 0 | RESULTADO ESPERADO: Introduzca el lado de la figura
+//ENTRADA: 2 5 R  | RESULTADO ESPERADO: R R R R R 
+//										R R R R R 
+//										R R R R R 
+//										R R R R R 
+//										R R R R R
+//ENTRADA: 3 0 | RESULTADO ESPERADO: Introduzca el lado de la figura
+//ENTRADA: 3 6 < | RESULTADO ESPERADO:      <<<<<<
+//										   <<<<<<<<
+//										  <<<<<<<<<<
+//										 <<<<<<<<<<<<
+//										<<<<<<<<<<<<<<
+//									   <<<<<<<<<<<<<<<<
+//										<<<<<<<<<<<<<<
+//										 <<<<<<<<<<<<
+//										  <<<<<<<<<<
+//										   <<<<<<<<
+//											<<<<<<
+//ENTRADA: 0 | RESULTADO ESPERADO: Saliendo del programa
+
 public class Principal05 {
 
 	// Activamos el Scanner
@@ -98,6 +135,7 @@ public class Principal05 {
 		return caracter;
 	}
 
+	// Función main
 	public static void main(String[] args) {
 		// Variable de la opción elegida por el usuario
 		int opcion;

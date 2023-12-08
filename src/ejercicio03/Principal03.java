@@ -3,6 +3,16 @@ package ejercicio03;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//ENTRADA: Vale | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 2.3 | RESULTADO ESPERADO: El dato introducido no es del tipo correcto
+//ENTRADA: 0 | RESULTADO ESPERADO: Escriba la cantidad de números que desea generar (a partir de 1)
+//ENTRADA: 3 1 | RESULTADO ESPERADO: Escriba el valor máximo que tomará el número aleatorio (mayor que 1)
+//ENTRADA: 3 9 1 | RESULTADO ESPERADO: Escriba el valor mínimo que tomará el número aleatorio (mayor que 1)
+//ENTRADA: 3 10 4 | RESULTADO ESPERADO: 3 Número(s) aleatorio(s) entre 0 y 1: 0.7 0.6 0.4
+//										3 Número(s) aleatorio(s) entre 1 y 10: 7 9 3 
+//										3 Número(s) aleatorio(s) entre 4 y 10: 9 6 4 
+
+
 public class Principal03 {
 
 	// Activamos el Scanner
@@ -17,7 +27,7 @@ public class Principal03 {
 		do {
 			try {
 				// Pedimos al usuario la cantidad de números que desea generar
-				System.out.println("Escriba la cantidad de números que desea generar");
+				System.out.println("Escriba la cantidad de números que desea generar (a partir de 1)");
 				// Lo leemos y se lo asignamos a la variable
 				cantNumeros = sc.nextInt();
 				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
@@ -44,7 +54,7 @@ public class Principal03 {
 		do {
 			try {
 				// Pedimos al usuario el valor máximo que tomará el número aleatorio
-				System.out.println("Escriba el valor máximo que tomará el número aleatorio");
+				System.out.println("Escriba el valor máximo que tomará el número aleatorio (mayor que 1)");
 				// Lo leemos y se lo asignamos a la variable
 				valorMaximo = sc.nextInt();
 				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
@@ -71,7 +81,7 @@ public class Principal03 {
 		do {
 			try {
 				// Pedimos al usuario el valor mínimo que tomará el número aleatorio
-				System.out.println("Escriba el valor mínimo que tomará el número aleatorio");
+				System.out.println("Escriba el valor mínimo que tomará el número aleatorio (mayor que 1)");
 				// Lo leemos y se lo asignamos a la variable
 				valorMinimo = sc.nextInt();
 				// Si el dato introducido es de tipo incorrecto, mostrará este mensaje
