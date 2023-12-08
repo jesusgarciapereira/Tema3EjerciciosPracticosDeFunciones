@@ -1,10 +1,13 @@
 package ejercicio02;
 
 public class Esfera02 {
-	
+
+	// Constante número pi
+	static final double PI = Math.PI;
+
 	// Atributos
 	double radio;
-	
+
 	// Constructor sin parámetros
 	public Esfera02() {
 
@@ -14,11 +17,9 @@ public class Esfera02 {
 	public Esfera02(double radio) {
 		this.radio = radio;
 	}
-	
+
 	// Función superficie()
 	public double superficie() {
-		// Constante número pi
-		final double PI = Math.PI;
 		// Variable superficie
 		double superficie;
 		// Asignamos la fórmula a la variable
@@ -26,11 +27,9 @@ public class Esfera02 {
 		// La función devolverá el valor de la superficie
 		return superficie;
 	}
-	
+
 	// Función volumen()
 	public double volumen() {
-		// Constante número pi
-		final double PI = Math.PI;
 		// Variable volumen
 		double volumen;
 		// Asignamos la fórmula a la variable
@@ -38,5 +37,5 @@ public class Esfera02 {
 		// La función devolverá el valor del volumen
 		return volumen;
 	}
-	
+
 }
