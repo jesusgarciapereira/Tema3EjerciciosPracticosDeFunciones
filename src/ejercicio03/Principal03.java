@@ -89,6 +89,7 @@ public class Principal03 {
 		return valorMinimo;
 	}
 
+	// Función main()
 	public static void main(String[] args) {
 		// Variables introducidas por el usuario
 		int cantNumeros, valorMaximo, valorMinimo;
